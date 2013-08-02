@@ -1,0 +1,10 @@
+
+
+Folder Name = yyyymmdd, incident name
+
+examples:
+
+20101218_DohertySearch
+
+20101218_PedderSearch
+

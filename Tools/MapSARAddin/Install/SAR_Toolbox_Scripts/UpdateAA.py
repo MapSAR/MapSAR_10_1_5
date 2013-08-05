@@ -34,7 +34,8 @@ def updateAAvalues():
     arcpy.AddMessage('Updating {0} values'.format(fc))
     with arcpy.da.UpdateCursor(fc,fields ) as rows:
         for row in rows:
-            row[0] = row[1] + row[2]
+            if row[2] > 0 and row[2] > 0:
+                row[0] = row[1] + row[2]
             rows.updateRow(row)
 
     # Teams

@@ -278,7 +278,8 @@ def updateAAvalues():
     arcpy.AddMessage('Updating {0} values'.format(fc))
     with arcpy.da.UpdateCursor(fc,fields ) as rows:
         for row in rows:
-            row[0] = row[1] + row[2]
+            if row[2] != None and row[2] != None:
+                row[0] = row[1] + row[2]
             rows.updateRow(row)
 
     # Teams
@@ -342,10 +343,8 @@ def updateValueLists(launched):
         PLS = workspace+"\\Incident\\PLS"
         Clues_Point = workspace+"\\Resources_Clues_Routes\\Clues_Point"
         Assignments = workspace+"\\Assignments"
-        Team_Members = workspace+"\\Team_Members"
+
         errorString = ''
-        arcpy.AddMessage(workspace)
-        arcpy.AddMessage(Assignments)
         # Process: Table To Domain
         arcpy.TableToDomain_management(Search_Segments, "Area_Name", "Area_Name", workspace, "Areas", "Areas", "REPLACE")
 

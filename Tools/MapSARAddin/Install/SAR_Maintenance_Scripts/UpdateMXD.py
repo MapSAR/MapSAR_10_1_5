@@ -50,7 +50,7 @@ for root, dirs, files in walk(TargetDir):
             This program is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\
             See the GNU General Public License for more details. GNU General Public License ee <http://www.gnu.org/licenses/>.'
 
-            mxd.tags = 'SAR, Template, Data Model, MapSAR, Rescue, SMSR'
+            mxd.tags = 'SAR, Template, Data Model, MapSAR, Rescue, SMSR, multiscale'
             mxd.hyperlinkBase = 'http://www.mapsar.net'
             mxd.author = 'Jon Pedder'
 

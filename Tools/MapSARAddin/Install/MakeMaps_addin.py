@@ -82,7 +82,7 @@ class Create_MapSAR_New_button(object):
         self.enabled = True
         self.checked = False
     def onClick(self):
-        pythonaddins.GPToolDialog(SAR_MaintenancePath, 'CreateMapSARfiles')
+        pythonaddins.GPToolDialog(SAR_MaintenancePath, 'LocalizeMapSAR')
 
 class Enter_UTM_Button(object):
     """Implementation for MakeMaps_addin.button_Enter_UTM_Button (Button)"""

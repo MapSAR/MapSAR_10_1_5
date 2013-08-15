@@ -62,11 +62,13 @@ def initializeDcenterOn():
     # Tuple format - Feature class, display text, Layername, (Optional fields - field 1, field 2)
 
     # Tuples with one fields - len is 4
-    allAssignments = ('Assignments','All Assignments','Assignments','Assignments.Assignment_Number')
+    #allAssignments = ('Assignments','All Assignments','Assignments','Assignments.Assignment_Number')
+    allAssignments = ('Assignments','All Assignments','hidden_assignments','Assignment_Number')
     allSegments = ('Search_Segments','All Segments','Search_Segments','Area_Name')
     pls = ('PLS','Select Subject Name From List','PLS_Subject_Information','Name')
     segment = ('Search_Segments','Select Segment Name From List','Search_Segments','Area_Name')
-    assignment = ('Assignments','Select Assignment Number From List','Assignments','Assignments.Assignment_Number')
+    #assignment = ('Assignments','Select Assignment Number From List','Assignments','Assignments.Assignment_Number')
+    assignment = ('Assignments','Select Assignment Number From List','hidden_assignments','Assignment_Number')
     # Tuples with two fields - len is 5
     asset = ('Assets','Select Asset From List','2 Incident_Assets','Asset_Number','Description')
     clue = ('Clues_Point','Select Clue from List','Clues_All','Clue_Number','Verbal_Description')

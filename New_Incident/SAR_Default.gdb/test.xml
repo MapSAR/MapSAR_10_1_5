@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20130106</CreaDate><CreaTime>14260600</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\desktop10.1\ArcToolbox\Toolboxes\Spatial Statistics Tools.tbx\ExportXYv" Date="20130106" Time="142606">ExportXYv "3 Assignments_Group\Assignments" Assignments.Assignment_Number;Assignments.Description COMMA C:\MapSAR\New_Incident\SAR_Default.gdb\test.csv ADD_FIELD_NAMES</Process></lineage></DataProperties></Esri></metadata>

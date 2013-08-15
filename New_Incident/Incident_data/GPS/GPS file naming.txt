@@ -1,0 +1,23 @@
+We suggest a file naming convention that follows the established GIS Standard Operating Procedures on Incidents 
+Projecct, aka GSTOP (http://gis.nwcg.gov) with SAR modifications. In MapSAR, you can deviate from this for what 
+works most efficently for your team during an incident. But keep in mind that it can be beneficial to use the same 
+format universally so you can easily share data between teams if more resources are called in, everyone is speaking 
+the same language and can be easily referenced in the future. 
+
+Filename:
+ 
+yyyymmdd_hhmm_incidentname_gpsfeaturetype_source_csdatum
+
+yyyymmdd = the date including the year when the data was collected
+hhmm = the time of data collection using a 24-hour clock
+incidentname = name of incident
+gpsfeaturetype = the type of feature such as; gps_lin for line data, gps_pnt for point data or gps_pol for polygon data
+source = the name of the person or the ICS position who collected the data
+cs = coordinate system, such as; ll for latitude/longitude, u12n for UTM zone 12 North
+datum = the datum, such as; w84 for WGS1984, 83 for NAD 1983, 27 for NAD 1927
+
+
+Examples:
+
+20120510_0930_Brown_gps_lin_Lewis_llw84.gpx
+20120427_1230_Radford_gps_pnt_Clark_u11n83.txt

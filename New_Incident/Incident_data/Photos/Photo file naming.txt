@@ -1,0 +1,22 @@
+We suggest a file naming convention that follows the established GIS Standard Operating Procedures on Incidents 
+Projecct, aka GSTOP (http://gis.nwcg.gov) with SAR modifications. In MapSAR, you can deviate from this for what 
+works most efficently for your team during an incident. But keep in mind that it can be beneficial to use the same 
+format universally so you can easily share data between teams if more resources are called in, everyone is speaking 
+the same language and can be easily referenced in the future. 
+
+Filename:
+
+yyyymmdd_hhmm_incidentname_content
+
+yyyymmdd = the date including the year when the data was collected
+hhmm = the time of data collection using a 24-hour clock
+incidentname = name of incident
+content = what is the file a picture of, such as; clue type, person, CDL etc.
+
+Examples:
+
+20101218_1630_Doherty_footprint.jpg
+
+20101218_1318_Doherty_person.jpg
+
+20101218_1145_Doherty_CDL.jpg

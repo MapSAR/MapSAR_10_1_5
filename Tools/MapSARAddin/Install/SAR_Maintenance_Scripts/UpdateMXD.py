@@ -40,10 +40,10 @@ for root, dirs, files in walk(TargetDir):
             frames = arcpy.mapping.ListDataFrames(mxd)
             for frame in frames:
                 frame.credits = 'Sierra Madre Search & Rescue Team www.smsr.org'
-                frame.description = 'MapSAR Template v10.1.6'
+                frame.description = 'MapSAR Template v10.2'
 
             mxd.credits = 'Sierra Madre Search & Rescue Team www.smsr.org'
-            mxd.summary = 'Mapping Template for Search And Rescue. \n MapSAR Template v10.1.6'
+            mxd.summary = 'Mapping Template for Search And Rescue. \n MapSAR Template v10.2'
             mxd.description = 'MapSAR wilderness search and rescue GIS data model and related python scripting Copyright (C) 2013  - Jon Pedder & SMSR \
             This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation,\
             either version 3 of the License, or (at your option) any later version.\

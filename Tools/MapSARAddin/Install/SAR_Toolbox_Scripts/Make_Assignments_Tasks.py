@@ -218,7 +218,6 @@ def assignmentExport(output, aSelection, aRows):
         txt.write("%%EO\n")
         txt.close ()
 
-    del row
 
 if __name__ == '__main__':
     # Parameters
@@ -239,7 +238,7 @@ if __name__ == '__main__':
     if aSelection == "SELECTION":
         arcpy.AddMessage("Assignments Selected are  " + str(sorted(PageRange)))
         for p in sorted(PageRange):
-            iQuery = '"Assignments.Assignment_Number" = {0}'.format(p)
+            iQuery = 'Assignments.Assignment_Number = {0}'.format(p)
             arcpy.SelectLayerByAttribute_management(fc, "NEW_SELECTION",iQuery)
             aRows = arcpy.SearchCursor(fc)
             assignmentExport(PDFlocation, aSelection, aRows)
@@ -249,7 +248,7 @@ if __name__ == '__main__':
         PageRange = [row[0] for row in arcpy.da.SearchCursor(fc, ("Assignments.Assignment_Number"))]
         arcpy.AddMessage("Assignments Selected are  " + str(sorted(PageRange)))
         for p in sorted(PageRange):
-            iQuery = '"Assignments.Assignment_Number" = {0}'.format(p)
+            iQuery = 'Assignments.Assignment_Number = {0}'.format(p)
             arcpy.SelectLayerByAttribute_management(fc, "NEW_SELECTION",iQuery)
             aRows = arcpy.SearchCursor(fc)
             assignmentExport(PDFlocation, aSelection, aRows)

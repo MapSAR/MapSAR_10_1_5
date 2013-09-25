@@ -103,19 +103,19 @@ def doDDP(aSelection, pageNum, aTask,PDFlocation,mxd):
         todaydate = now.strftime("%m-%d-%Y")
         todaytime = now.strftime("%H.%M %p")
 
-        iQuery = '"Assignments.Assignment_Number" = {0}'.format(pageNum)
+        # For 10.2 compatibility removed quotes from query
+        # iQuery = '"Assignments.Assignment_Number" = {0}'.format(pageNum)
 
-        # TESTING ONLY for 10.2 - potential bug with joined layers and select by attribute
-        # iQuery = '"Assignment_Number" = {0}'.format(pageNum)
+        iQuery = 'Assignments.Assignment_Number = {0}'.format(pageNum)
 
         ddp = mxd.dataDrivenPages
         indexLayer = ddp.indexLayer
         arcpy.SelectLayerByAttribute_management(indexLayer, "NEW_SELECTION",iQuery)
 
-        arcpy.AddMessage("Creating Map for Assignment # {0} : {1}\Assignment_Map_{2}.pdf".format(str(pageNum), PDFlocation, str(pageNum)))
-
         # Set Team Logo, Declination and Scale Bar
         mapElms.setMapElements(mxd)
+
+        arcpy.AddMessage("Creating Map for Assignment # {0} : {1}\Assignment_Map_{2}.pdf".format(str(pageNum), PDFlocation, str(pageNum)))
 
         # Set map scale
         df = arcpy.mapping.ListDataFrames(mxd, "MapSAR")[0]

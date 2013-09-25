@@ -216,8 +216,12 @@ if('multiscale' in Targetmxd.tags):
     MapFC = DcenterOn[aKeyvalue][2]
     MapField = DcenterOn[aKeyvalue][3]
 
-    # arcpy.Addfieldelimiters here
-    qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    # arcpy.Addfieldelimiters here. Code revised for 10.2 compatability
+    # qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    if MapFC != 'Assignments':
+        qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    else:
+        qField = MapField
 
     # Check if the selection is all features or single feature
     # If it's all features

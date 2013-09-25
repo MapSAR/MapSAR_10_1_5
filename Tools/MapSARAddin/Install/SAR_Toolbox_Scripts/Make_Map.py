@@ -36,6 +36,7 @@ import SetMapElements as mapElms
 from arcpy import env
 arcpy.env.overwriteOutput = True
 
+
 def layersOn(mxd, selectedParams):
     """ Requires an mxd as arg 1 and a list of values for arg 2 (to match the dict keys)
     returns no values, just turns on/off selected layers """
@@ -141,6 +142,7 @@ else:
     mapElms.setMapElements(Targetmxd)
 
     # Load dictionary of fetaure and field names
+    # DcenterOn = mapsar.initializeDcenterOn()
     DcenterOn = mapsar.initializeDcenterOn()
 
     # Build SQL query to get selection to center map around
@@ -153,10 +155,14 @@ else:
     MapFC = DcenterOn[aKeyvalue][2]
     MapField = DcenterOn[aKeyvalue][3]
 
-    arcpy.AddMessage("Generating Map " + MapName)
+    arcpy.AddMessage("Generating Map {0}".format(MapName))
 
-    # arcpy.Addfieldelimiters here
-    qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    # arcpy.Addfieldelimiters here. Code revised for 10.2 compatability
+    # qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    if MapFC != 'Assignments':
+        qField = arcpy.AddFieldDelimiters(MapFC, MapField)
+    else:
+        qField = MapField
 
     # Check if the selection is all features or single feature
     # If it's all features

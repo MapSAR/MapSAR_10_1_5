@@ -27,6 +27,7 @@
 #-------------------------------------------------------------------------------
 
 import arcpy, os, sys, pythonaddins
+from arcpy import env
 
 def layersOn(mxd, selectedParams):
     """ Requires an mxd as arg 1 and a list of values for arg 2 (to match the dict keys)
@@ -62,13 +63,13 @@ def initializeDcenterOn():
     # Tuple format - Feature class, display text, Layername, (Optional fields - field 1, field 2)
 
     # Tuples with one fields - len is 4
-    #allAssignments = ('Assignments','All Assignments','Assignments','Assignments.Assignment_Number')
-    allAssignments = ('Assignments','All Assignments','hidden_assignments','Assignment_Number')
+    allAssignments = ('Assignments','All Assignments','Assignments','Assignments.Assignment_Number')
+    # allAssignments = ('Assignments','All Assignments','hidden_assignments','Assignment_Number')
     allSegments = ('Search_Segments','All Segments','Search_Segments','Area_Name')
     pls = ('PLS','Select Subject Name From List','PLS_Subject_Information','Name')
     segment = ('Search_Segments','Select Segment Name From List','Search_Segments','Area_Name')
-    #assignment = ('Assignments','Select Assignment Number From List','Assignments','Assignments.Assignment_Number')
-    assignment = ('Assignments','Select Assignment Number From List','hidden_assignments','Assignment_Number')
+    assignment = ('Assignments','Select Assignment Number From List','Assignments','Assignments.Assignment_Number')
+    # assignment = ('Assignments','Select Assignment Number From List','hidden_assignments','Assignment_Number')
     # Tuples with two fields - len is 5
     asset = ('Assets','Select Asset From List','2 Incident_Assets','Asset_Number','Description')
     clue = ('Clues_Point','Select Clue from List','Clues_All','Clue_Number','Verbal_Description')
@@ -148,6 +149,7 @@ def populateBaseData(mxd):
     Saves current base lyr file to disk, loads lyr file from disk to target mxd"""
     import os, arcpy
     arcpy.env.overwriteOutput = True
+    from arcpy import env
 
     # Gather information to copy over base_data
 
@@ -158,7 +160,10 @@ def populateBaseData(mxd):
 
     # Save base_data layer file to disk in c:\MapSAR\TempDir from current mxd.
     # If directory does not exist create it
-    TempDir = r'c:\mapsar\Tools\Layer_Templates'
+    # TempDir = r'c:\mapsar\Tools\Layer_Templates'
+
+    TempDir = '{0}Base_Data\Layers'.format(env.workspace.rstrip('SAR_Default.gdb'))
+
     baselayer = '{0}\{1}'.format(TempDir,LayerName)
 
     if os.path.exists(TempDir):
